@@ -6,8 +6,8 @@ This AutoHotkey (AHK) script automates fishing and shrimp farming in the Roblox 
 
 ## **Features**
 
-* **Automated Fishing:** Spams the "E" key to simulate continuous fishing.  
-* **Shrimp Farming:** Enables farming shrimp through repeated key presses.  
+* **Automated Fishing:** Simulates continuous fishing. With bottle farming 
+* **Shrimp Farming:** Enables farming shrimp through repeated key "E" presses. press "P" to finish  
 * **Toggle Script:** Press the "P" key at any time to pause or resume the script.
 
 ---
@@ -39,7 +39,7 @@ This AutoHotkey (AHK) script automates fishing and shrimp farming in the Roblox 
 ## **Usage**
 
 * **Starting the Script:**  
-  Once `fishing.ahk` is running, the script will automatically begin spamming the "E" key to perform fishing and shrimp farming in Roblox "Lootify".  
+  Once `fishing.ahk` is running, the script will automatically open the main menu where the person can change the search area, start fishing or to farm a shrimp in Roblox "Lootify".  
 * **Toggling the Script:**  
   * Press the **"P"** key to pause the script if you need to take a break or regain manual control.  
   * Press the **"P"** key again to resume the script.
