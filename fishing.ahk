@@ -480,8 +480,8 @@ CatchBottle(){
                 Send, {e up}
             }
 
-            Click, 10, % (A_ScreenHeight)
-            Click, 10, % (A_ScreenHeight)
+            Click, 10, A_ScreenHeight
+            Click, 10, A_ScreenHeight
             ; Move back to the original position
             Send, {s down}
             Sleep, elapsedTime
