@@ -62,6 +62,7 @@ showmainUI:
     Gui, Add, Button, gTestColors, Testing Colors
 
     Gui, Add, Button, gSpamE, Spam E for money Shrimp
+    Gui, Add, Button, gInfiniteTowerLoot, Infinite Tower Loot
 
     Gui, Add, Checkbox, vIsRunning gPauseScript, Pause Enabled
     Gui, Add, Checkbox, vLogUse gLogUseChange, Use log file for debugging
@@ -223,12 +224,12 @@ FishingStart(){
 
         Loop, 10
         {
-            error = FindImage("error.png")
+            error = FindImage("images/error.png")
             if (error != "")
             {
                 ToolTip, Error detected. Catching the bottle, 10, A_ScreenHeight/2
-                CatchBottle()
-                break
+                ; CatchBottle()
+                ; break
             }
             
             Sleep 15
@@ -295,7 +296,7 @@ WaitForBlackScreens() {
             Break 
         }
         ; Check for top black screen
-        ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight//3, black.png
+        ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight//3, images/black.png
         if (ErrorLevel = 0)
         {
             ToolTip, Event detected
@@ -445,6 +446,31 @@ SpamE(){
     Return
 }
 
+InfiniteTowerLoot(){
+    openRoblox()
+    IsRunning := true
+    ToolTip, Event for Infinite Tower was Started, 10, A_ScreenHeight/2
+    Loop
+        {
+            if (!IsRunning)
+            {
+                ToolTip, Event for Infinite Tower was ended, 10, A_ScreenHeight/2
+                Send {s up}
+                Sleep 1000 
+                Break
+            }
+            
+            Send {s down}
+            Click
+
+            Sleep 500
+            Send {1}
+            Sleep 500
+            Send {2}
+        }
+    Return
+}
+
 CatchBottle(){
     global CanFish
 
@@ -464,7 +490,7 @@ CatchBottle(){
         }
 
         ; Check for the error image indicating a bottle
-        if (FindImage("bottle.png") != "" || (time := A_TickCount - startTime > 10000) ) {
+        if (FindImage("images/bottle.png") != "" || (time := A_TickCount - startTime > 10000) ) {
 
             elapsedTime := A_TickCount - startTime
             ; Stop moving forward
